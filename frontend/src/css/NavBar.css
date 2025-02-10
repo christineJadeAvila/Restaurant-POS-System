@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.card-container {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+    margin: 1rem;
+    padding: 1rem;
+
+    border: 0.5px solid white;
+    border-radius: 20px;
+
+    width: 100px;
+    height: auto;
+}
+.cat-img {
+    margin-bottom: 1rem;
+}
+.card-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border: 0.5px solid #A6CDC6;
+  }
