@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from app1.models import Corder
+from models import Corder
 from .serializers import CorderSerializer
 from rest_framework import status
 
