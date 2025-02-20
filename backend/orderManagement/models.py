@@ -22,7 +22,7 @@ class Product(models.Model):
     category_ID = models.ForeignKey(Product_Category, on_delete=models.CASCADE, related_name='category')
     product_name =models.CharField(max_length=100)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    prepTime = models.DateTimeField(auto_now_add=True)
+    prepTime = models.IntegerField()
 
     def __str__(self):
         return self.product_name
