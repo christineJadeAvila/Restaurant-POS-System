@@ -1,24 +1,46 @@
 import NavBar from "./components/NavBar"
 import SideBar from "./components/SideBar"
 import { BrowserRouter, Routes, Route, Navigation, Navigate } from "react-router-dom"
-import ORMs from "./pages/orderManagementPage"
-import PRMs from "./pages/productManagement"
+import OrderManagementPage from "./pages/OrderManagementPage"
+import Register from "./pages/Register"
+import Login from "./pages/login"
+import NotFound from "./pages/NotFound"
+import ProductManagementPage from "./pages/productManagementPage"
 import ProtectedRoute from "./components/ProtectedRoutes"
 
-
-function logout() {
+function Logout() {
   localStorage.clear()
-  return <Navigate to="/" />
+  return <Navigate to="/login" />
 }
+
+function RegisterAndLogout() {
+  localStorage.clear()
+  return <Register />
+}
+
 function App() {
   
  return(
-  <>
-   
-  </>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={
+        <ProtectedRoute>
+          <OrderManagementPage/>
+        </ProtectedRoute>
+      }></Route>
+      <Route path="/add-products" element={
+        <ProtectedRoute>
+          <ProductManagementPage/>
+        </ProtectedRoute>
+      }></Route>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/logout" element={<Logout/>}/>
+      <Route path="/register" element={<RegisterAndLogout/>}/>
+      <Route path="*" element={<NotFound/>}/>
+    </Routes>
+  </BrowserRouter>
  )
 
 }
 
 export default App
-X``

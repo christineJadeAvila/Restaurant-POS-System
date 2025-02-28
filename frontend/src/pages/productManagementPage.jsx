@@ -5,4 +5,4 @@ function ProductManagementPage() {
     </>
 }
 
-export default OrderManagementPage
+export default ProductManagementPage
