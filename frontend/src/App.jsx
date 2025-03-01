@@ -1,6 +1,5 @@
-import NavBar from "./components/NavBar"
-import SideBar from "./components/SideBar"
-import { BrowserRouter, Routes, Route, Navigation, Navigate } from "react-router-dom"
+// import NavBar from "./components/NavBar"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import OrderManagementPage from "./pages/OrderManagementPage"
 import Register from "./pages/Register"
 import Login from "./pages/login"

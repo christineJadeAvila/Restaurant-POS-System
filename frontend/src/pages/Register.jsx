@@ -1,10 +1,7 @@
+import Form from "../components/Form"
+
 function Register() {
-    return <>
-    
-        <h1>
-            Register
-        </h1>
-    </>
+    return <Form route="/api/token/" method="register" />
 }
 
 export default Register
