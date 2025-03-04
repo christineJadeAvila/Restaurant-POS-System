@@ -1,15 +1,23 @@
 import { useState, useEffect } from "react"
 import api from "../api"
 import Product_Category from "../components/Category"
+import Product from "../components/Products"
 
 
 function OrderManagementPage() {
 
     const [categories, setCategory ] = useState([]);
+    const [products, setProducts ] = useState([])
+
 
     useEffect(() => {
         getCategory()
     }, [])
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
 
     const getCategory = () => {
         api
@@ -23,13 +31,38 @@ function OrderManagementPage() {
             .catch((err) => alert(err))
     }
 
+    const getProducts = () => {
+        api
+
+            .get("api/products/")
+            .then((res) => res.data)
+            .then((data) => {
+                setProducts(data)
+                console.log(data)
+            })
+            .catch((err) => alert(err))
+    }
+
+
     return <>
+
+        <h1>Product Category</h1>
+        
        <div className="getCategories">
         {categories.map((category) => (
-            <Product_Category category={category} key={note.id} />
+            <Product_Category category={category} key={category.id} />
+        ))}
+       </div>
+
+       <h1>Products</h1>
+
+       <div className="getCategories">
+        {products.map((product) => (
+            <Product product={product} key={product.id} />
         ))}
        </div>
         
+    
     </>
 }
 

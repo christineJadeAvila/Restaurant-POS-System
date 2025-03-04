@@ -34,7 +34,7 @@ class ProductSerializer(serializers.ModelSerializer):
 class Product_CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Product_Category
-        fields = ["category_ID", "category_name", "decription"]
+        fields = "__all__"
 
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta: 

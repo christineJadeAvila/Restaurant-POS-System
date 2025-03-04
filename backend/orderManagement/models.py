@@ -12,10 +12,9 @@ class C_Order(models.Model):
 class Product_Category(models.Model):
     category_ID = models.AutoField(primary_key=True)
     category_name = models.CharField(max_length=100)
-    description = models.TextField()
 
     def __str__(self):
-        return self.description
+        return self.category_name
 
 class Product(models.Model):
     product_ID = models.AutoField(primary_key=True)

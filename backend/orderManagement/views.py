@@ -38,15 +38,17 @@ class ProductListCreate(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        user = self.request.user
-        return user
+    queryset = Product.objects.all()
 
-    def perform_create(self, serializer):
-        if serializer.is_valid():
-            serializer.save(self.request.user)
-        else:
-            print(serializer.errors)
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     return user
+
+    # def perform_create(self, serializer):
+    #     if serializer.is_valid():
+    #         serializer.save(self.request.user)
+    #     else:
+    #         print(serializer.errors)
 
 
 
@@ -56,15 +58,17 @@ class Product_CategoryListCreate(generics.ListCreateAPIView):
     serializer_class = Product_CategorySerializer
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        user = self.request.user
-        return user
+    queryset = Product_Category.objects.all()
 
-    def perform_create(self, serializer):
-        if serializer.is_valid():
-            serializer.save(self.request.user)
-        else:
-            print(serializer.errors)
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     return user
+
+    # def perform_create(self, serializer):
+    #     if serializer.is_valid():
+    #         serializer.save(self.request.user)
+    #     else:
+    #         print(serializer.errors)
 
 
 
