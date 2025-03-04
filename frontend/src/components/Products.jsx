@@ -1,11 +1,22 @@
-function Product({ product, onDelete }) {
+import "../styles/Products.css"
 
+function Product({ product, onDelete }) {
+        
     return (
-        <div className="category-card-container">
-            <p>{product.product_ID}: {product.category_ID} - {product.product_name},  
-                {product.price}: Preparation Time - {product.prepTime} minutes</p>
-           
+        <div className="flexboxx">
+            <div className="product--card--container">
+                <div className="image--container">
+
+                    {/* image here */}
+
+                </div>
+                <div>
+                <p>{product.product_name}</p>
+                <h3>{product.price}</h3>
+                </div>
+            </div>
         </div>
+        
     )
 
 }

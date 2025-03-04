@@ -1,0 +1,14 @@
+body {
+    background-color: #F2F2F2;
+}
+
+.div--container {
+    display: grid;
+    grid-template-areas: 
+    "categories-and-products" "customer-checkout"
+    
+    ;
+
+    grid-template-columns: 3fr 1fr;
+}
+

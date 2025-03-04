@@ -1,0 +1,34 @@
+.product--card--container {
+
+    border: 0.5px gainsboro solid;
+    width: 140px;
+    height: 160px;
+
+    margin: 1rem;
+    padding: 0.5rem;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    justify-items: center;
+
+  
+
+}
+
+.flexboxx {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.image--container {
+    
+    width: 140px;
+    height: 70px;
+
+    background-color: gainsboro;
+    border-radius: 10px;
+}

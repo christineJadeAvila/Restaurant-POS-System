@@ -2,7 +2,9 @@ import { useState, useEffect } from "react"
 import api from "../api"
 import Product_Category from "../components/Category"
 import Product from "../components/Products"
+import CustomerOrder from "../components/CustomerOrder"
 
+import "../styles/OrderMS.css"
 
 function OrderManagementPage() {
 
@@ -45,24 +47,29 @@ function OrderManagementPage() {
 
 
     return <>
-
-        <h1>Product Category</h1>
+        <div className="div--container">
+            <section className="categories-and-products">
+                <h1>Product Category</h1>
+                
+                <div className="getCategories">
+                {categories.map((category) => (
+                    <Product_Category category={category} key={category.id} />
+                ))}
+                </div>
         
-       <div className="getCategories">
-        {categories.map((category) => (
-            <Product_Category category={category} key={category.id} />
-        ))}
-       </div>
-
-       <h1>Products</h1>
-
-       <div className="getCategories">
-        {products.map((product) => (
-            <Product product={product} key={product.id} />
-        ))}
-       </div>
+                <h1>Products</h1>
         
-    
+                <div className="getCategories">
+                {products.map((product) => (
+                    <Product product={product} key={product.id} />
+                ))}
+                </div>
+            </section>
+
+            <section className="customer-checkout">
+                <CustomerOrder/>
+            </section>
+        </div>
     </>
 }
 
