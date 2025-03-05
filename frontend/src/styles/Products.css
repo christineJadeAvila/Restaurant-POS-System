@@ -1,33 +1,21 @@
 .product--card--container {
 
     border: 0.5px gainsboro solid;
-    width: 140px;
-    height: 160px;
+    width: 135px;
+    height: 165px;
 
-    margin: 1rem;
+    margin: 5px;
     padding: 0.5rem;
-
     border-radius: 10px;
 
     background-color: white;
 
-    justify-items: center;
-
-  
-
-}
-
-.flexboxx {
-    
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .image--container {
     
-    width: 140px;
-    height: 70px;
+    width: 130px;
+    height: 80px;
 
     background-color: gainsboro;
     border-radius: 10px;
