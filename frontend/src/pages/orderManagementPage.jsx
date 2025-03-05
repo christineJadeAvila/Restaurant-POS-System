@@ -49,7 +49,8 @@ function OrderManagementPage() {
             })
             .catch((err) => alert(err))
     }
-
+    
+    // Show all products if "All Menu" is selected, otherwise filter by category
     const filteredProducts = selectedCategory === "all"
         ? products
         : products.filter(product => product.category_ID === selectedCategory);
@@ -63,14 +64,15 @@ function OrderManagementPage() {
                 {/* DISPLAY CATEGORIES */}
                 <div className="getCategories">
 
-                    
-                    <button 
+                    {/* DISPLAY ALL MENU */}
+                    <div 
                         onClick={() => setSelectedCategory("all")} 
-                        className={selectedCategory === "all" ? "selected" : ""}
+                        className={`category--card--container ${selectedCategory === "all" ? "selected" : ""}`}
                     >
                         All Menu
-                    </button>
-
+                    </div>
+                    
+                    {/* CATEGORY NAVIGATION BARS */}
                     {categories.map((category) => (
                         <Product_Category 
                             category={category} 

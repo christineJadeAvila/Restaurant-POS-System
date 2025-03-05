@@ -1,6 +1,6 @@
 import "../styles/Products.css"
 
-function Product({ product, onDelete }) {
+function Product({ product }) {
         
     return (
         <div className="flexboxx">
