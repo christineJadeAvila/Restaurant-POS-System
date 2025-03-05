@@ -7,18 +7,13 @@ function NavBar(props) {
     
     var date = new DateObject()
 
-    console.log(date.format("dddd DD MMMM @ hh:mm:ss.SSS a"))
-
-
     return(
         <>
             <section className="navigation--bar">
 
-                
                 <img src={burgerMenu} alt="" />
                 <p className="nav--date">{date.format("dddd, DD MMMM YYYY")}</p>
                 <p className="nav--time">{date.format(" hh:mm A")}</p>
-
 
             </section>
         </>
