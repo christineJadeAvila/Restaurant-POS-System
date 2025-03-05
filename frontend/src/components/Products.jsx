@@ -11,8 +11,8 @@ function Product({ product, onDelete }) {
 
                 </div>
                 <div>
-                <p>{product.product_name}</p>
-                <h3>{product.price}</h3>
+                <p className="product--name">{product.product_name}</p>
+                <p className="product--price">Php {product.price}</p>
                 </div>
             </div>
         </div>

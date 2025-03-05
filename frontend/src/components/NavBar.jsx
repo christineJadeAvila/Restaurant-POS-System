@@ -1,27 +1,16 @@
-import "../css/NavBar.css"
-import catImg from "../assets/ex.png"
+import "../styles/NavBar.css"
+import burgerMenu from "../assets/OrderMS/burgerMenu.svg"
 
 function NavBar(props) {
     return(
         <>
-            <div className="card-container">
-                <img src={catImg} alt="cat-img" className="cat-img" />
-                <h3 className="cat-title">Title</h3>
-                <h5 className="cat-qty">110 items</h5>
-            </div>
-            {/* <Car brand="Ford"/> */}
+            <section className="navigation--bar">
+                <img src={burgerMenu} alt="" />
+
+
+            </section>
         </>
     )
 }
 
 export default NavBar;
-
-
-// Testing Props here
-// function Car(props) {
-//     return(
-//         <>
-//             I am a property {props.brand}
-//         </>
-//     )
-// }

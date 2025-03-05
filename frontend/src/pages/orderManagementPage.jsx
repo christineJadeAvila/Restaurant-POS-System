@@ -2,7 +2,10 @@ import { useState, useEffect } from "react"
 import api from "../api"
 import Product_Category from "../components/Category"
 import Product from "../components/Products"
+import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
+
+
 
 import "../styles/OrderMS.css"
 
@@ -49,15 +52,18 @@ function OrderManagementPage() {
     return <>
         <div className="div--container">
             <section className="categories-and-products">
-                <h1>Product Category</h1>
-                
+
+                <NavBar/>                
                 <div className="getCategories">
-                {categories.map((category) => (
-                    <Product_Category category={category} key={category.id} />
-                ))}
+
+                    <div className="category--card--container">All menu</div>
+
+                    {categories.map((category) => (
+                        <Product_Category category={category} key={category.id} />
+                    ))}
                 </div>
         
-                <h1>Products</h1>
+                <input type="search" className="search--bar" placeholder="Search something..."/>
         
                 <div className="getProducts">
                     {products.map((product) => (

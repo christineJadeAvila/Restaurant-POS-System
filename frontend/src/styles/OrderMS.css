@@ -9,11 +9,33 @@ body {
     
     ;
 
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 65% 35%;
 }
 
-.getProducts {
+.getProducts, .getCategories  {
     display: flex ;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.customer-checkout {
+    border: black solid 0.5px;
+
+    margin: 0px;
+    padding: 1rem;
+}
+
+.search--bar {
+    width: 97%;
+    padding:0.5rem;
+    padding-left: 1rem;
+    margin-left: 5px;
+
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+}
+
+.search--bar::placeholder {
+    color: #16404D;
+    font-size: 10px;
 }

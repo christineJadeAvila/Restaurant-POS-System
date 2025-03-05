@@ -3,7 +3,10 @@
 function CustomerOrder() {
     return <section>
     
-        <h1>Customer Order Section</h1>
+        <h3>Customer's Name</h3>
+        <p>Order Number: #000</p>
+
+
 
     </section>
 }
