@@ -1,3 +1,8 @@
 *{
     font-family: "Poppins";
 }
+
+::selection {
+    color: white;
+    background-color: #9FCCC1;
+}

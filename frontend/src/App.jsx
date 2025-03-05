@@ -1,10 +1,11 @@
 // import NavBar from "./components/NavBar"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
-import OrderManagementPage from "./pages/orderManagementPage"
+
 import Register from "./pages/Register"
 import Login from "./pages/login"
 import NotFound from "./pages/NotFound"
 import ProductManagementPage from "./pages/productManagementPage"
+import OrderManagementPage from "./pages/OrderManagementPage"
 import ProtectedRoute from "./components/ProtectedRoutes"
 
 function Logout() {

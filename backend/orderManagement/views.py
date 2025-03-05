@@ -40,7 +40,7 @@ class ProductListCreate(generics.ListCreateAPIView):
 
 
 
-    queryset = Product.objects.filter(category_ID=5)
+    queryset = Product.objects.all()
 
     # def get_queryset(self):
     #     user = self.request.user

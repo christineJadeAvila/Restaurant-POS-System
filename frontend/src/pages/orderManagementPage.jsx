@@ -11,8 +11,9 @@ import "../styles/OrderMS.css"
 
 function OrderManagementPage() {
 
-    const [categories, setCategory ] = useState([]);
+    const [categories, setCategory ] = useState([])
     const [products, setProducts ] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState([])
 
 
     useEffect(() => {
@@ -22,6 +23,7 @@ function OrderManagementPage() {
     useEffect(() => {
         getProducts()
     }, [])
+
 
 
     const getCategory = () => {
@@ -48,28 +50,47 @@ function OrderManagementPage() {
             .catch((err) => alert(err))
     }
 
+    // filter products based on selected category
+    const filteredProducts = products.filter(product => product.category_ID === selectedCategory)
 
     return <>
         <div className="div--container">
             <section className="categories-and-products">
 
                 <NavBar/>                
+
+                {/* DISPLAY CATEGORIES */}
                 <div className="getCategories">
 
                     <div className="category--card--container">All menu</div>
 
                     {categories.map((category) => (
-                        <Product_Category category={category} key={category.id} />
+                        <Product_Category 
+                            category={category} 
+                            key={category.category_ID} 
+                            onSelect={setSelectedCategory}
+                            isSelected={category.category_ID === selectedCategory}
+                        />
                     ))}
                 </div>
-        
+
+
+                {/* SEARCH PRODUCTS */}
                 <input type="search" className="search--bar" placeholder="Search something..."/>
         
+
+                {/* DISPLAY PRODUCTS */}
                 <div className="getProducts">
-                    {products.map((product) => (
-                        <Product product={product} key={product.id} />
-                    ))}
+                    {filteredProducts.length > 0 ? (
+                        filteredProducts.map((product) => (
+                            <Product product={product} key={product.product_ID} />
+                        ))
+                    ) : (
+                        <>No products</>
+                    )}
+                   
                 </div>
+                    
             </section>
 
             <section className="customer-checkout">
