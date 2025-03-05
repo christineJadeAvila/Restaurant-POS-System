@@ -12,10 +12,18 @@
     color: #16404D;
 }
 
-.navigation--bar img {
-    margin-right: 100px;
+.burger--menu {
+    margin-right: 50px;
 }
 
 .nav--date {
     margin-right: 30px;
+}
+
+.date--time {
+    margin-top: 7px;
+    margin-right: 2px;
+
+    width: 20px;
+    height: 20px;
 }
