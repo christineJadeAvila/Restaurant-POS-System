@@ -12,7 +12,7 @@ function Product({ product, onDelete }) {
                 </div>
                 <div>
                 <p className="product--name">{product.product_name}</p>
-                <p className="product--price">Php {product.price}</p>
+                <p className="product--price">₱{product.price}</p>
                 </div>
             </div>
         </div>

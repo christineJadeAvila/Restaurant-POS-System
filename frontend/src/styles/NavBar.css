@@ -2,4 +2,20 @@
     margin-left: 5px;
     margin-top: 1rem;
     margin-bottom: 2rem;
+
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    font-size: 10px;
+
+    color: #16404D;
+}
+
+.navigation--bar img {
+    margin-right: 100px;
+}
+
+.nav--date {
+    margin-right: 30px;
 }
