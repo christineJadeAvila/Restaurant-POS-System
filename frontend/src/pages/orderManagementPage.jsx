@@ -59,10 +59,10 @@ function OrderManagementPage() {
         
                 <h1>Products</h1>
         
-                <div className="getCategories">
-                {products.map((product) => (
-                    <Product product={product} key={product.id} />
-                ))}
+                <div className="getProducts">
+                    {products.map((product) => (
+                        <Product product={product} key={product.id} />
+                    ))}
                 </div>
             </section>
 

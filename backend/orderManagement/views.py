@@ -38,7 +38,9 @@ class ProductListCreate(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticated]
 
-    queryset = Product.objects.all()
+
+
+    queryset = Product.objects.filter(category_ID=5)
 
     # def get_queryset(self):
     #     user = self.request.user

@@ -12,3 +12,8 @@ body {
     grid-template-columns: 3fr 1fr;
 }
 
+.getProducts {
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
