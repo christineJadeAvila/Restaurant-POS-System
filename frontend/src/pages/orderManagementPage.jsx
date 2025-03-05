@@ -51,7 +51,7 @@ function OrderManagementPage() {
     }
 
     // filter products based on selected category
-    const filteredProducts = products.filter(product => product.category_ID === selectedCategory)
+    const filteredProducts = () => products.filter(product => product.category_ID === selectedCategory)
 
     return <>
         <div className="div--container">
@@ -62,6 +62,7 @@ function OrderManagementPage() {
                 {/* DISPLAY CATEGORIES */}
                 <div className="getCategories">
 
+                    
                     <div className="category--card--container">All menu</div>
 
                     {categories.map((category) => (
@@ -72,21 +73,24 @@ function OrderManagementPage() {
                             isSelected={category.category_ID === selectedCategory}
                         />
                     ))}
+                    
                 </div>
-
 
                 {/* SEARCH PRODUCTS */}
                 <input type="search" className="search--bar" placeholder="Search something..."/>
         
-
-                {/* DISPLAY PRODUCTS */}
+                {/* DISPLAY PRODUCTS based on category ID */}
                 <div className="getProducts">
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map((product) => (
                             <Product product={product} key={product.product_ID} />
                         ))
                     ) : (
-                        <>No products</>
+                        <div className="getProducts">
+                            {products.map((product) => (
+                                <Product product={product} key={product.id} />
+                            ))}
+                        </div>
                     )}
                    
                 </div>
