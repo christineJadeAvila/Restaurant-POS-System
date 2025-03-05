@@ -50,8 +50,9 @@ function OrderManagementPage() {
             .catch((err) => alert(err))
     }
 
-    // filter products based on selected category
-    const filteredProducts = () => products.filter(product => product.category_ID === selectedCategory)
+    const filteredProducts = selectedCategory === "all"
+        ? products
+        : products.filter(product => product.category_ID === selectedCategory);
 
     return <>
         <div className="div--container">
@@ -63,7 +64,12 @@ function OrderManagementPage() {
                 <div className="getCategories">
 
                     
-                    <div className="category--card--container">All menu</div>
+                    <button 
+                        onClick={() => setSelectedCategory("all")} 
+                        className={selectedCategory === "all" ? "selected" : ""}
+                    >
+                        All Menu
+                    </button>
 
                     {categories.map((category) => (
                         <Product_Category 
