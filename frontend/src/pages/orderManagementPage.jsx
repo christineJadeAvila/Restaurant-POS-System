@@ -105,9 +105,11 @@ function OrderManagementPage() {
                     
             </section>
 
-            <section className="customer-checkout">
+            <section className="customer--order">
                 <CustomerOrder/>
             </section>
+
+            
         </div>
     </>
 }
