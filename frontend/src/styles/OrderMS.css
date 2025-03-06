@@ -18,10 +18,20 @@ body {
     flex-wrap: wrap;
 }
 
-.customer-checkout {
+.customer--order{
+
+    /* we'll think about this feature */
+    position: fixed;
+    translate: 810px;
+
 
     margin: 0px;
     padding: 1rem;
+
+    height: 100% !important;
+    width: 100% !important;
+
+    background-color: white;
 }
 
 .search--bar {
@@ -38,3 +48,4 @@ body {
     color: #16404D;
     font-size: 10px;
 }
+
