@@ -14,6 +14,7 @@ function OrderManagementPage() {
     const [categories, setCategory ] = useState([])
     const [products, setProducts ] = useState([])
     const [selectedCategory, setSelectedCategory] = useState([])
+    const [searchQuery, setSearchQuery] = useState("")
 
 
     useEffect(() => {
@@ -50,10 +51,13 @@ function OrderManagementPage() {
             .catch((err) => alert(err))
     }
     
-    // Show all products if "All Menu" is selected, otherwise filter by category
-    const filteredProducts = selectedCategory === "all"
-        ? products
-        : products.filter(product => product.category_ID === selectedCategory);
+    // Show all products if "All Menu" is selected, otherwise filter by category, and for search.
+    const filteredProducts = products.filter(product => {
+        const matchesCategory = selectedCategory === "all" || product.category_ID === selectedCategory;
+        const matchesSearch = product.product_name.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
+
 
     return <>
         <div className="div--container">
@@ -85,7 +89,13 @@ function OrderManagementPage() {
                 </div>
 
                 {/* SEARCH PRODUCTS */}
-                <input type="search" className="search--bar" placeholder="Search something..."/>
+                <input 
+                    type="search" 
+                    className="search--bar" 
+                    placeholder="Search something..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)} 
+                />
         
                 {/* DISPLAY PRODUCTS based on category ID */}
                 <div className="getProducts">
