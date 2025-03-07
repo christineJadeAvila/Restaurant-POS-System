@@ -10,6 +10,8 @@ body {
     ;
 
     grid-template-columns: 65% 35%;
+
+    margin-bottom: 30%;
 }
 
 .getProducts, .getCategories  {
@@ -22,7 +24,9 @@ body {
 
     /* we'll think about this feature */
     position: fixed;
-    translate: 810px;
+    left: 65%;
+    right: 0;
+    top:0;
 
 
     margin: 0px;

@@ -4,6 +4,7 @@ import Product_Category from "../components/Category"
 import Product from "../components/Products"
 import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
+import TrackOrder from "../components/TrackingOrder"
 
 
 
@@ -51,7 +52,8 @@ function OrderManagementPage() {
             .catch((err) => alert(err))
     }
     
-    // Show all products if "All Menu" is selected, otherwise filter by category, and for search.
+    // Show all products if "All Menu" is selected, otherwise filter by category,and Search
+
     const filteredProducts = products.filter(product => {
         const matchesCategory = selectedCategory === "all" || product.category_ID === selectedCategory;
         const matchesSearch = product.product_name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -119,6 +121,9 @@ function OrderManagementPage() {
                 <CustomerOrder/>
             </section>
 
+            <section className="tracker">
+                <TrackOrder />
+            </section>
             
         </div>
     </>

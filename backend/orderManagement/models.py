@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class C_Order(models.Model):
     order_ID = models.AutoField(primary_key=True)
+    customer_name = models.CharField(max_length=50, default="Customer's Name")
     orderDate = models.DateTimeField(auto_now_add=True)
     totalAmount = models.IntegerField()
 
