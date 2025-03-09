@@ -16,17 +16,13 @@ function OrderManagementPage() {
     const [products, setProducts ] = useState([])
     const [selectedCategory, setSelectedCategory] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
+    const [customerOrders, setCustomerOrders] = useState([]) // stores selected products
 
 
     useEffect(() => {
         getCategory()
-    }, [])
-
-    useEffect(() => {
         getProducts()
     }, [])
-
-
 
     const getCategory = () => {
         api
@@ -59,6 +55,11 @@ function OrderManagementPage() {
         const matchesSearch = product.product_name.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
     });
+
+    // Add product to Customer Order section
+    const addToOrder = (product) => {
+        setCustomerOrders([...customerOrders, product])
+    }
 
 
     return <>
@@ -103,12 +104,12 @@ function OrderManagementPage() {
                 <div className="getProducts">
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map((product) => (
-                            <Product product={product} key={product.product_ID} />
+                            <Product onAddToOrder={addToOrder} product={product} key={product.product_ID} />
                         ))
                     ) : (
                         <div className="getProducts">
                             {products.map((product) => (
-                                <Product product={product} key={product.id} />
+                                <Product onAddToOrder={addToOrder} product={product} key={product.id} />
                             ))}
                         </div>
                     )}
@@ -118,7 +119,7 @@ function OrderManagementPage() {
             </section>
 
             <section className="customer--order">
-                <CustomerOrder/>
+                <CustomerOrder orders={customerOrders}/>
             </section>
 
             <section className="tracker">

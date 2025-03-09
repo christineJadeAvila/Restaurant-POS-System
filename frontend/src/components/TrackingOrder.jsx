@@ -26,6 +26,7 @@ function TrackOrder() {
 
                 <div className="kitchenOrderStatus">
                     <p>Name</p>
+                    
                 </div>
             </div>)
         } 
