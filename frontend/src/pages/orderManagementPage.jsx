@@ -5,9 +5,6 @@ import Product from "../components/Products"
 import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
 import TrackOrder from "../components/TrackingOrder"
-
-
-
 import "../styles/OrderMS.css"
 
 function OrderManagementPage() {
@@ -48,24 +45,25 @@ function OrderManagementPage() {
             .catch((err) => alert(err))
     }
     
-    // Show all products if "All Menu" is selected, otherwise filter by category,and Search
-
+    // SHOW all products if "ALL MENU" is selected, 
+    // otherwise FILTER BY CATEGORY,
+    // and SEARCH
     const filteredProducts = products.filter(product => {
         const matchesCategory = selectedCategory === "all" || product.category_ID === selectedCategory;
         const matchesSearch = product.product_name.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
     });
 
-    // Add product to Customer Order section
+    // ADD PRODUCT to CUSTOMER ORDER SECTION
     const addToOrder = (product) => {
-        setCustomerOrders([...customerOrders, product])
+        setCustomerOrders([...customerOrders, product]) // stores to a new array
     }
-
 
     return <>
         <div className="div--container">
             <section className="categories-and-products">
 
+                {/* NAVIGATION BAR */}
                 <NavBar/>                
 
                 {/* DISPLAY CATEGORIES */}
@@ -107,6 +105,8 @@ function OrderManagementPage() {
                             <Product onAddToOrder={addToOrder} product={product} key={product.product_ID} />
                         ))
                     ) : (
+
+                        // DISPLAY ALL PRODUCTS
                         <div className="getProducts">
                             {products.map((product) => (
                                 <Product onAddToOrder={addToOrder} product={product} key={product.id} />

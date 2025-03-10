@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Register from "./pages/Register"
 import Login from "./pages/login"
 import NotFound from "./pages/NotFound"
-import ProductManagementPage from "./pages/productManagementPage"
 import OrderManagementPage from "./pages/OrderManagementPage"
 import ProtectedRoute from "./components/ProtectedRoutes"
 
@@ -26,11 +25,6 @@ function App() {
       <Route path="/" element={
         <ProtectedRoute>
           <OrderManagementPage/>
-        </ProtectedRoute>
-      }></Route>
-      <Route path="/add-products" element={
-        <ProtectedRoute>
-          <ProductManagementPage/>
         </ProtectedRoute>
       }></Route>
       <Route path="/login" element={<Login/>}/>

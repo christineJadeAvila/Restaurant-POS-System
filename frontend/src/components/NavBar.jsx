@@ -10,7 +10,6 @@ import DateObject from "react-date-object"
 function NavBar(props) {
 
     // live clock
-
     const [time, setTime ] = React.useState(new Date());
 
     React.useEffect(() => {
@@ -29,7 +28,6 @@ function NavBar(props) {
 
                 <img className="date--time" src={calendar} alt="" />
                 <p className="nav--date">{date.format("dddd, DD MMMM YYYY")}</p>
-
         
                 <img className="date--time" src={clock} alt="" />
                 <p>{time.toLocaleString("en-US", {
