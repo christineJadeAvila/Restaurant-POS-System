@@ -11,12 +11,17 @@ function CustomerOrder({orders}) {
                     {orders.map((order, index) => (
                         <li key={index}>
                             {order.product_name} - P{order.price}
+                            <input type="number" id="quantity" name="quantity" min="1"></input>
                         </li>
                     ))}
                 </ul> 
             ) : (
                 <p>No products yet</p>
             )}
+
+
+            
+
         </div>
             <table className="payment--table">
                 <tr>
