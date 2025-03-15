@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../api"
 import Product_Category from "../components/Category"
-import Product from "../components/Products"
+import Product from "../components/Product"
 import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
 import TrackOrder from "../components/TrackingOrder"
@@ -56,7 +56,21 @@ function OrderManagementPage() {
 
     // ADD PRODUCT to CUSTOMER ORDER SECTION
     const addToOrder = (product) => {
-        setCustomerOrders([...customerOrders, product]) // stores to a new array
+        // setCustomerOrders([...customerOrders, product]) // stores to a new array
+
+        setCustomerOrders(prevOrders => {
+            const existingOrder = prevOrders.find(order => order.product_ID === product.product_ID);
+            
+            if (existingOrder) {
+                return prevOrders.map(order =>
+                    order.product_ID === product.product_ID
+                        ? { ...order, quantity: (order.quantity || 1) + 1 }
+                        : order
+                );
+            } else {
+                return [...prevOrders, { ...product, quantity: 1 }];
+            }
+        });
     }
 
     return <>
@@ -102,14 +116,14 @@ function OrderManagementPage() {
                 <div className="getProducts">
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map((product) => (
-                            <Product onAddToOrder={addToOrder} product={product} key={product.product_ID} />
+                            <Product onAddToOrder={addToOrder} product={product} key={product.product_ID} categories={categories}/>
                         ))
                     ) : (
 
                         // DISPLAY ALL PRODUCTS
                         <div className="getProducts">
                             {products.map((product) => (
-                                <Product onAddToOrder={addToOrder} product={product} key={product.id} />
+                                <Product onAddToOrder={addToOrder} product={product} key={product.id} categories={categories}/>
                             ))}
                         </div>
                     )}
@@ -119,7 +133,7 @@ function OrderManagementPage() {
             </section>
 
             <section className="customer--order">
-                <CustomerOrder orders={customerOrders}/>
+            <CustomerOrder orders={customerOrders} setCustomerOrders={setCustomerOrders} />
             </section>
 
             <section className="tracker">
