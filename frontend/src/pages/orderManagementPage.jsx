@@ -23,12 +23,10 @@ function OrderManagementPage() {
 
     const getCategory = () => {
         api
-
             .get("api/product-category/")
             .then((res) => res.data)
             .then((data) => {
                 setCategory(data)
-                console.log(data)
             })
             .catch((err) => alert(err))
     }
@@ -40,7 +38,6 @@ function OrderManagementPage() {
             .then((res) => res.data)
             .then((data) => {
                 setProducts(data)
-                console.log(data)
             })
             .catch((err) => alert(err))
     }
@@ -56,11 +53,8 @@ function OrderManagementPage() {
 
     // ADD PRODUCT to CUSTOMER ORDER SECTION
     const addToOrder = (product) => {
-        // setCustomerOrders([...customerOrders, product]) // stores to a new array
-
         setCustomerOrders(prevOrders => {
             const existingOrder = prevOrders.find(order => order.product_ID === product.product_ID);
-            
             if (existingOrder) {
                 return prevOrders.map(order =>
                     order.product_ID === product.product_ID
@@ -72,17 +66,13 @@ function OrderManagementPage() {
             }
         });
     }
-
     return <>
         <div className="div--container">
             <section className="categories-and-products">
-
                 {/* NAVIGATION BAR */}
                 <NavBar/>                
-
                 {/* DISPLAY CATEGORIES */}
                 <div className="getCategories">
-
                     {/* DISPLAY ALL MENU */}
                     <div 
                         onClick={() => setSelectedCategory("all")} 
@@ -90,7 +80,6 @@ function OrderManagementPage() {
                     >
                         All Menu
                     </div>
-                    
                     {/* CATEGORY NAVIGATION BARS */}
                     {categories.map((category) => (
                         <Product_Category 
@@ -100,9 +89,7 @@ function OrderManagementPage() {
                             isSelected={category.category_ID === selectedCategory}
                         />
                     ))}
-                    
                 </div>
-
                 {/* SEARCH PRODUCTS */}
                 <input 
                     type="search" 

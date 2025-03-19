@@ -16,8 +16,15 @@ class UserSerializer(serializers.ModelSerializer):
 class C_OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = C_Order
-        fields = ["order_ID", "orderDate", "totalAmount"]
-        extra_kwargs = {"totalAmount": {"read_only": True}}
+        fields = "__all__"
+        extra_kwargs = {
+            "totalAmount": {"required": True} 
+        }
+
+class Order_LineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order_Line
+        fields = "__all__"
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:

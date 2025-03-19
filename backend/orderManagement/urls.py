@@ -11,6 +11,10 @@ urlpatterns = [
     path("product-category/", views.Product_CategoryListCreate.as_view(), name="product-category-list"),
     path("products/delete/<int:pk>", views.ProductListCreate.as_view(), name="product-category-list"),
 
+    path("order-lines/", views.Order_LineListCreate.as_view(), name="order-line-list"),
+
+    
+
     
 
 
