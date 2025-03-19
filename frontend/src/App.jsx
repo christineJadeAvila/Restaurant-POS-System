@@ -5,6 +5,7 @@ import Register from "./pages/Register"
 import Login from "./pages/login"
 import NotFound from "./pages/NotFound"
 import OrderManagementPage from "./pages/OrderManagementPage"
+import Payment from "./pages/PaymentPage"
 import ProtectedRoute from "./components/ProtectedRoutes"
 
 function Logout() {
@@ -25,6 +26,11 @@ function App() {
       <Route path="/" element={
         <ProtectedRoute>
           <OrderManagementPage/>
+        </ProtectedRoute>
+      }></Route>
+      <Route path="/payment/:orderId" element={
+        <ProtectedRoute>
+          <Payment/>
         </ProtectedRoute>
       }></Route>
       <Route path="/login" element={<Login/>}/>

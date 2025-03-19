@@ -1,10 +1,15 @@
 import "../styles/Customer.css"
+
+import Payment from "../pages/PaymentPage";
+
 import api from "../api";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CustomerOrder({orders, setCustomerOrders}) {
     const [customerName, setCustomerName] = useState("");
+    const navigate = useNavigate();
 
     // UPDATE ORDER QUANTITY
     const updateQuantity = (productId, newQuantity) => {
@@ -69,6 +74,9 @@ function CustomerOrder({orders, setCustomerOrders}) {
             alert("Order Successful")
             setCustomerOrders([]) // Clear cart
             setCustomerName("")   // Reset name
+
+            
+            navigate(`/payment/${OrderId}`)
         } catch (error) {
             alert("Order Failed")
         }
