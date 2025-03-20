@@ -1,30 +1,21 @@
 .product--card--container {
-
     border: 0.5px gainsboro solid;
     width: 132px;
     height: 180px;
-
     margin: 5px;
     padding: 0.5rem;
     border-radius: 10px;
-
     background-color: white;
-
 }
-
 .image--container {
-    
     width: 130px;
     height: 80px;
-
     background-color: gainsboro;
     border-radius: 10px;
 }
-
 .product--name{
     font-size: 12px;
 }
-
 .product--price {
     float: right;
     font-size: 20px;

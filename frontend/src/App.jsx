@@ -28,10 +28,10 @@ function App() {
           <OrderManagementPage/>
         </ProtectedRoute>
       }></Route>
-      <Route path="/payment/:orderId" element={
-        <ProtectedRoute>
+      <Route path="/payment/" element={
+        // <ProtectedRoute>
           <Payment/>
-        </ProtectedRoute>
+        // </ProtectedRoute>
       }></Route>
       <Route path="/login" element={<Login/>}/>
       <Route path="/logout" element={<Logout/>}/>

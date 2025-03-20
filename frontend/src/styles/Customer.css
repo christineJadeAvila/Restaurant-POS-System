@@ -9,7 +9,6 @@ body {
     background-color: var(--button-color);
     height: 60px;
     width: 17%;
-
     color: white;
 }
 
@@ -20,8 +19,6 @@ body {
     background-color: var(--light--buttonColor);
     height: 60px;
     width: 17%;
-
     color: black;
-
 }
 

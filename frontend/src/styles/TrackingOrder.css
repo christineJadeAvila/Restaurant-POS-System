@@ -4,10 +4,6 @@ body {
 }
 
 .track--order {
-
-
-
-
    position: fixed;
    left: 15px;
    bottom: 0;
@@ -16,7 +12,6 @@ body {
    background-color: var(--button-color);
    color: white;
    text-align: center;
-
    border: 1px solid white;
    border-radius: 10px 10px 0px 0;
 } 
@@ -24,7 +19,6 @@ body {
 
 .viewOrderStatus {
    padding: 1rem;
-
    position: fixed;
    left: 0;
    bottom: 0;
@@ -33,27 +27,19 @@ body {
    height: 100px;
    background-color: rgb(255, 255, 255);
    color: black;
-
    transition-timing-function: ease-in-out;
-
    transition: 4s;
 }
 
 .closeButton {
-
-    
     position: fixed;
-
     left: 15px;
     bottom: 115.5px;
-
     width: 13%;
     height: 30px;
-
     text-align: center;
     background-color: white;
     padding-top: 10px;
-
     border: 1px solid white;
     border-radius: 20px 20px 0 0;
 
@@ -62,7 +48,6 @@ body {
 .kitchenOrderStatus {
     width: 20%;
     height: 70%;
-
     border: 1px solid var(--border-color);
     border-radius: 10px;
 }
