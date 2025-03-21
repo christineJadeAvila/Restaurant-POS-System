@@ -1,9 +1,5 @@
 import "../styles/Customer.css"
-
-import Payment from "../pages/PaymentPage";
-
 import api from "../api";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,17 +20,12 @@ function CustomerOrder({orders, setCustomerOrders}) {
         );
     };
 
-
-
     // Calculate Subtotal
     const subtotal = orders.reduce((acc, order) => acc + order.price * order.quantity, 0);
-
     // Calculate Tax (5%)
     const tax = subtotal * 0.01;
-
     // Apply Discount (if needed)
     const discount = subtotal >= 1000 ? subtotal * 0.1 : 0; // Example: 10% discount for orders above 1000
-
     // Compute Total Amount
     const totalAmount = subtotal + tax - discount;
 
@@ -48,17 +39,8 @@ function CustomerOrder({orders, setCustomerOrders}) {
                 customer_name: customerNameSavetoDatabase,
                 totalAmount: parseInt(totalAmount.toFixed(2))
             })
-            console.log("Order Data:", { customer_name: customerName, totalAmount });
-            const OrderId = orderResponse.data.order_ID 
 
-            orders.forEach(order => {
-                console.log("Order Data:", {
-                    order_ID: OrderId,
-                    product_ID: parseInt(order.product_ID), // Check if this is the correct product ID
-                    product_quantity: order.quantity,
-                    total: (order.price * order.quantity).toFixed(2),
-                });
-            });
+            const OrderId = orderResponse.data.order_ID 
 
             await Promise.all(
                 orders.map(order => 
@@ -74,9 +56,9 @@ function CustomerOrder({orders, setCustomerOrders}) {
             alert("Order Successful")
             setCustomerOrders([]) // Clear cart
             setCustomerName("")   // Reset name
-
             
             navigate(`/payment/${OrderId}`)
+            
         } catch (error) {
             alert("Order Failed")
         }
@@ -112,6 +94,7 @@ function CustomerOrder({orders, setCustomerOrders}) {
                                     min="1" 
                                     value={order.quantity} 
                                     onChange={(e) => updateQuantity(order.product_ID, parseInt(e.target.value, 10))}
+                                    required
                                 />
 
                                 {/* INCREASE BUTTON */}
