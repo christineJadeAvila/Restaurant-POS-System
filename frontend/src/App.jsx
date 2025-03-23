@@ -1,8 +1,8 @@
 // import NavBar from "./components/NavBar"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
-import Register from "./pages/Register"
-import Login from "./pages/login"
+import Register from "./authentication/Register"
+import Login from "./authentication/Login"
 import NotFound from "./pages/NotFound"
 import OrderManagementPage from "./pages/OrderManagementPage"
 import Payment from "./pages/PaymentPage"
