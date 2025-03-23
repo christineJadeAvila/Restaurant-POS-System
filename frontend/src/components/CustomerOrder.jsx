@@ -64,6 +64,7 @@ function CustomerOrder({orders, setCustomerOrders}) {
         }
     }
 
+
     // RENDER
     return <section>
         {/* INPUT CUSTOMER NAME */}
