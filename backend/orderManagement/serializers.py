@@ -31,13 +31,7 @@ class Order_LineSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = [
-            "product_ID", 
-            "category_ID", 
-            "product_name", 
-            "price", 
-            "prepTime"
-        ]
+        fields = "__all__"
 
 
 class Product_CategorySerializer(serializers.ModelSerializer):

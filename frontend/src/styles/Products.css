@@ -10,7 +10,7 @@
 .image--container {
     width: 130px;
     height: 80px;
-    background-color: gainsboro;
+    background-color: #F2F2F2;
     border-radius: 10px;
 }
 .product--name{

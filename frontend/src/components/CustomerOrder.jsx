@@ -32,7 +32,7 @@ function CustomerOrder({orders, setCustomerOrders}) {
     // PLACE ORDER 
     const handleSubmitOrder = async () => {
 
-        const customerNameSavetoDatabase = customerName;
+        const customerNameSavetoDatabase = customerName
 
         try {
             const orderResponse = await api.post("api/orders/", {

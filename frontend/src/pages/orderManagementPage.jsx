@@ -5,6 +5,7 @@ import Product from "../components/Product"
 import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
 import TrackOrder from "../components/TrackingOrder"
+import SideBar from "../components/SideBar"
 import "../styles/OrderMS.css"
 
 function OrderManagementPage() {
@@ -68,6 +69,10 @@ function OrderManagementPage() {
     }
     return <>
         <div className="div--container">
+            <section className="sideBar">
+                <SideBar/>
+            </section>
+
             <section className="categories-and-products">
                 {/* NAVIGATION BAR */}
                 <NavBar/>                

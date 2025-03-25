@@ -21,9 +21,9 @@ class Product_Category(models.Model):
 class Product(models.Model):
     product_ID = models.AutoField(primary_key=True)
     category_ID = models.ForeignKey(Product_Category, on_delete=models.CASCADE, related_name='category')
-    product_name =models.CharField(max_length=100)
+    product_name =models.CharField(max_length=100, unique=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    prepTime = models.IntegerField()
+    image = models.ImageField(upload_to='products/', default='banana.svg')
 
     def __str__(self):
         return f"Product id: {self.product_ID}"
@@ -40,7 +40,7 @@ class Order_Line(models.Model):
     
 class Payment(models.Model):
     payment_ID = models.AutoField(primary_key=True)
-    order_ID = models.ForeignKey(C_Order, on_delete=models.CASCADE, related_name='orders')
+    order_ID = models.ForeignKey(C_Order, on_delete=models.PROTECT, related_name='orders')
     payment_method = models.CharField(max_length=50)
     payment_status = models.CharField(
         max_length=50
