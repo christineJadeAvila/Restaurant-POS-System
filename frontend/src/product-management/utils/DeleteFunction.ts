@@ -1,15 +1,12 @@
 import api from "../../api";
 
-const handleDeletion = async (ID) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this product")
-
+const handleDeletion = async (ID: number): Promise<void> => {
     try {
-        if(confirmDelete == true) {
-            await api.delete(`api/products/delete/${ID}/`)
-            alert("Product deleted Successfully!")
-        }
+        await api.delete(`api/products/delete/${ID}/`)
+        alert("Product deleted Successfully!")
+        
     } catch (error) {
-        console.log("Error deleting Product", error)
+        console.error("Error deleting Product", error)
         alert("Failed to delete product")
     }
 }

@@ -28,9 +28,13 @@ function AllProducts() {
 
     // DELETE PRODUCT FUNCTION
     const handleDeleteProduct = async (productID) => {
-        handleDeletion(productID)
-        // Update UI by removing the deleted product
-        setProducts(products.filter(product => product.product_ID !== productID));
+        const confirmDelete = window.confirm("Are you sure you want to delete this product")
+        
+        if(confirmDelete === true) {
+            handleDeletion(productID)
+            // Update UI by removing the deleted product
+            setProducts(products.filter(product => product.product_ID !== productID));
+        }
     }
 
     return (<>
