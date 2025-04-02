@@ -3,7 +3,7 @@ import "../styles/AddProducts.css"
 function UpdateProduct() {
     return (
         <>
-            <header>
+        <header>
             <button className="menu-button">☰</button>
             <h1 className="header-title">Product Management System</h1>
         </header>

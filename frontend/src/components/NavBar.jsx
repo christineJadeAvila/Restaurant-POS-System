@@ -1,4 +1,5 @@
 import "../styles/NavBar.css"
+import "../styles/SideBar.css"
 import { useNavigate } from "react-router-dom";
 import burgerMenu from "../assets/OrderMS/burgerMenu.svg"
 import calendar from "../assets/OrderMS/calendar.png"

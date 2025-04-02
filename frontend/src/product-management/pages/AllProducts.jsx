@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Search from "../../components/SearchBar";
 import "../styles/AllProducts.css"
+import handleDeletion from "../utils/DeleteFunction"
 import api from "../../api";
 
 function AllProducts() {
@@ -14,7 +14,6 @@ function AllProducts() {
 
     const getProducts = () => {
         api
-
             .get("api/products/")
             .then((res) => res.data)
             .then((data) => {
@@ -29,36 +28,17 @@ function AllProducts() {
 
     // DELETE PRODUCT FUNCTION
     const handleDeleteProduct = async (productID) => {
-        const confirmDelete = window.confirm("Are you sure you want to delete this product?");
-    
-        if (!confirmDelete) {
-            return; // Do nothing if the user cancels
-        }
-        
-        try {
-            await api.delete(`api/products/delete/${productID}/`)
-
-            // Update UI by removing the deleted product
-            setProducts(products.filter(product => product.product_ID !== productID));
-
-            alert("Product deleted successfully!");
-
-        } catch (error) {
-            console.error("Error deleting product:", error);
-            alert("Failed to delete product.");
-        }
+        handleDeletion(productID)
+        // Update UI by removing the deleted product
+        setProducts(products.filter(product => product.product_ID !== productID));
     }
 
     return (<>
-        {/* HEADER// remove and replace the design */}
         <header>
             <h1 className="page-title">Product Management System</h1>
             <button className="add-button" onClick={navigateTo}>Add Product</button>
         </header>
-        
-         {/* import search bar here */}
-         <Search/>
-       
+
         <div className="main-content">
            
             {/* PRODUCT TABLE */}
