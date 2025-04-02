@@ -5,17 +5,14 @@ import Product from "../components/Product"
 import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
 import TrackOrder from "../components/TrackingOrder"
-import SideBar from "../components/SideBar"
 import "../styles/OrderMS.css"
 
 function OrderManagementPage() {
-
     const [categories, setCategory ] = useState([])
     const [products, setProducts ] = useState([])
     const [selectedCategory, setSelectedCategory] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
     const [customerOrders, setCustomerOrders] = useState([]) // stores selected products
-
 
     useEffect(() => {
         getCategory()
@@ -34,7 +31,6 @@ function OrderManagementPage() {
 
     const getProducts = () => {
         api
-
             .get("api/products/")
             .then((res) => res.data)
             .then((data) => {
@@ -67,12 +63,9 @@ function OrderManagementPage() {
             }
         });
     }
+
     return <>
         <div className="div--container">
-            <section className="sideBar">
-                <SideBar/>
-            </section>
-
             <section className="categories-and-products">
                 {/* NAVIGATION BAR */}
                 <NavBar/>                
@@ -95,6 +88,7 @@ function OrderManagementPage() {
                         />
                     ))}
                 </div>
+
                 {/* SEARCH PRODUCTS */}
                 <input 
                     type="search" 
@@ -103,7 +97,7 @@ function OrderManagementPage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)} 
                 />
-        
+
                 {/* DISPLAY PRODUCTS based on category ID */}
                 <div className="getProducts">
                     {filteredProducts.length > 0 ? (
@@ -111,7 +105,6 @@ function OrderManagementPage() {
                             <Product onAddToOrder={addToOrder} product={product} key={product.product_ID} categories={categories}/>
                         ))
                     ) : (
-
                         // DISPLAY ALL PRODUCTS
                         <div className="getProducts">
                             {products.map((product) => (
@@ -119,13 +112,11 @@ function OrderManagementPage() {
                             ))}
                         </div>
                     )}
-                   
                 </div>
-                    
             </section>
 
             <section className="customer--order">
-            <CustomerOrder orders={customerOrders} setCustomerOrders={setCustomerOrders} />
+                <CustomerOrder orders={customerOrders} setCustomerOrders={setCustomerOrders} />
             </section>
 
             <section className="tracker">

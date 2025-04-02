@@ -17,9 +17,7 @@ function Payment() {
 
                 <section className="e-payment">
                     <div className="qr-container">
-
                             <img src={qr} alt="" />
-
                     </div>
                     <input type="text" id="reference-number" required/>
                     <label>Reference Number</label>

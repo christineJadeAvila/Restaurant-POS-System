@@ -53,19 +53,19 @@ function AllProducts() {
         {/* HEADER// remove and replace the design */}
         <header>
             <h1 className="page-title">Product Management System</h1>
-            <button class="add-button" onClick={navigateTo}>Add Product</button>
+            <button className="add-button" onClick={navigateTo}>Add Product</button>
         </header>
         
          {/* import search bar here */}
          <Search/>
        
-        <div class="main-content">
+        <div className="main-content">
            
             {/* PRODUCT TABLE */}
-            <table class="product-table">
+            <table className="product-table">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" class="checkbox"/></th>
+                        <th><input type="checkbox" className="checkbox"/></th>
                         <th>Product</th>
                         <th>Price</th>
                         <th>Category</th>
@@ -76,7 +76,7 @@ function AllProducts() {
                 <tbody>
                     {products.map((product) => (
                     <tr key={product.product_ID}>
-                        <td><input type="checkbox" class="checkbox"/></td>
+                        <td><input type="checkbox" className="checkbox"/></td>
                         <td className="product-image-cell">
                             <img className="product-image" src={product.image} alt="" />
                             <td>{product.product_name}</td>
@@ -84,7 +84,7 @@ function AllProducts() {
                         <td>{product.price}</td>
                         <td>{product.category_ID}</td>
                         <td>Active</td>
-                        <td class="action-links">
+                        <td className="action-links">
                             <a href="#" class="update-link">Update</a>
                             <a href="#" onClick={() => handleDeleteProduct(product.product_ID)} class="delete-link">Delete</a>
                         </td>

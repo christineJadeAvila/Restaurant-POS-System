@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 
 function Search({ searchQuery, setSearchQuery }) {
-    
     return (
         <>
             <input 

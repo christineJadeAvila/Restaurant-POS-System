@@ -61,6 +61,7 @@ class ProductListCreate(generics.ListCreateAPIView):
 
         # Save the processed image back to the model
         product.image.save(img.name, image_content, save=True)
+        
 
 class ProductRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()

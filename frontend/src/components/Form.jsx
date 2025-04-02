@@ -8,7 +8,6 @@ function Form({ route, method }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-
     const name = method === "login" ? "Login" : "Register";
 
     const handleSubmit = async (e) => {
@@ -28,7 +27,7 @@ function Form({ route, method }) {
         } finally {
             console.log("succesful")
         }
-    };
+    }
 
     return (
         <form onSubmit={handleSubmit} className="form-container">
@@ -51,7 +50,7 @@ function Form({ route, method }) {
                 {name}
             </button>
         </form>
-    );
+    )
 }
 
 export default Form

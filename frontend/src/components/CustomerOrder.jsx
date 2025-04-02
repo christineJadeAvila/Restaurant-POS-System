@@ -31,7 +31,6 @@ function CustomerOrder({orders, setCustomerOrders}) {
 
     // PLACE ORDER 
     const handleSubmitOrder = async () => {
-
         const customerNameSavetoDatabase = customerName
 
         try {
@@ -56,14 +55,12 @@ function CustomerOrder({orders, setCustomerOrders}) {
             alert("Order Successful")
             setCustomerOrders([]) // Clear cart
             setCustomerName("")   // Reset name
-            
             navigate(`/payment/${OrderId}`)
             
         } catch (error) {
             alert("Order Failed")
         }
     }
-
 
     // RENDER
     return <section>
@@ -108,7 +105,6 @@ function CustomerOrder({orders, setCustomerOrders}) {
             ) : (
                 <p>No products yet</p>
             )}
-
         </div>
 
         {/* VALUES */}
@@ -121,7 +117,6 @@ function CustomerOrder({orders, setCustomerOrders}) {
         {/* ORDER ACTIONS */}
         <button className="cancelOrder">Cancel</button>
         <button className="placeOrder"onClick={handleSubmitOrder} >Place Order</button>
-
     </section>
 }
 

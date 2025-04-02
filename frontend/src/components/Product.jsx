@@ -1,7 +1,6 @@
 import "../styles/Products.css"
 
 function Product({ product, onAddToOrder }) {
-        
     return (
         <div className="flexboxx">
             <div className="product--card--container">
@@ -19,9 +18,7 @@ function Product({ product, onAddToOrder }) {
 
             </div>
         </div>
-        
     )
-
 }
 
 export default Product
