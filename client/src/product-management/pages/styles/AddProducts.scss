@@ -1,0 +1,93 @@
+@import "../../../index.scss";
+
+/* Form container */
+.add-product-header {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+.form-container {
+    display: flex;
+    justify-content: center;   /* Centers horizontally */
+    text-align: center;
+    padding: 1rem;
+    .add-product-header {
+        text-align: left;
+        margin-bottom: 1px;
+    }
+    .form-row {
+        margin-bottom: 20px;
+        .form-label {
+            display: flex;
+            margin-bottom: 8px;
+            margin-left: auto;
+            font-weight: 500;
+        }
+        .form-input {
+            width: 500px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .required::after {
+            content: "*";
+            color: #ef4444;
+        }
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            appearance: none;
+            background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+        }
+    }
+    
+    /* Upload area */
+    .upload-area {
+        border: 1px dashed #ccc;
+        border-radius: 8px;
+        padding: 40px;
+        text-align: center;
+        cursor: pointer;
+        .upload-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .upload-subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+    }
+
+    .action-btns {
+        padding: 0.5rem 1rem;
+        margin: 0 1rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &.submit-action {
+            background-color: $primary-color;
+            color: $background-color;
+
+            &:hover {
+                color: $dark-color;
+            }
+        }
+
+        &.delete-action {
+            background-color: $danger-color;
+            &:hover {
+                color: $dark-color;
+            }
+        }
+    }
+}
+
+
+

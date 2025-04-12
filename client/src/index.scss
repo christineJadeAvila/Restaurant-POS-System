@@ -1,0 +1,19 @@
+$theme-color: #2C454C;
+$transparent-color:  rgba(46, 71, 78, 20%);
+$highlight-color: #FDFF75;
+$darker-than-white: #F2F2F2;
+$dark-color: #16404D;
+$background-color: #FFFF;
+$primary-color: #2C72F7;
+$danger-color: #FB4A4A;
+
+* {
+    margin: 0;
+    font-family: "Urbanist", Arial, Helvetica, sans-serif;
+}
+
+::selection {
+    $text-color: $background-color;
+    color: $text-color;
+    background-color: $dark-color;
+}

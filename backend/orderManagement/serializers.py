@@ -21,8 +21,6 @@ class C_OrderSerializer(serializers.ModelSerializer):
             "totalAmount": {"required": True} 
         }
 
-    
-
 class Order_LineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order_Line

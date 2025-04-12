@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoutes"
 import AddProduct from "./product-management/pages/AddProduct"
 import UpdateProduct from "./product-management/pages/UpdateProduct"
 import AllProducts from "./product-management/pages/AllProducts"
+import ArchivedProducts from "./product-management/pages/ArchivedProducts"
 
 function Logout() {
   localStorage.clear()
@@ -36,6 +37,13 @@ function App() {
       <Route path="/add-product" element={
         <ProtectedRoute>
           <AddProduct/>
+        </ProtectedRoute>
+      }></Route>
+
+      {/* PRODUCT MANAGEMENT */}
+      <Route path="/archived-products" element={
+        <ProtectedRoute>
+          <ArchivedProducts/>
         </ProtectedRoute>
       }></Route>
 

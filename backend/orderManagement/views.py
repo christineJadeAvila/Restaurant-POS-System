@@ -68,6 +68,18 @@ class ProductRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticated]
 
+class ProductArchiveUpdate(generics.UpdateAPIView):
+    serializer_class = ProductSerializer
+    permission_classes = [IsAuthenticated]
+
+    queryset = Product.objects.all()
+
+    def perform_update(self, serializer):
+        product = serializer.save()
+        product = self.get_object()
+        product.is_archived.save(is_archived=True)
+
+
 class Order_LineListCreate(generics.ListCreateAPIView):
     queryset = Order_Line.objects.all()
     serializer_class = Order_LineSerializer

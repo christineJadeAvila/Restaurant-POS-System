@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/AllProducts.css"
-import handleDeletion from "../utils/DeleteFunction"
+import handleArchive from "../utils/ArchiveFunction"
 import api from "../../api";
 
 function AllProducts() {
@@ -15,9 +15,9 @@ function AllProducts() {
     const getProducts = () => {
         api
             .get("api/products/")
-            .then((res) => res.data)
-            .then((data) => {
-                setProducts(data)
+            .then((res) => {
+                const activeProducts = res.data.filter((product) => !product.is_archived)
+                setProducts(activeProducts)
             })
             .catch((err) => alert(err))
     }
@@ -26,12 +26,13 @@ function AllProducts() {
         navigate("/add-product")
     }
 
-    // DELETE PRODUCT FUNCTION
-    const handleDeleteProduct = async (productID) => {
-        const confirmDelete = window.confirm("Are you sure you want to delete this product")
-        
-        if(confirmDelete === true) {
-            handleDeletion(productID)
+    // ARCHIVE PRODUCT FUNCTION
+    const handleArchiveProduct = async (productID) => {
+        const confirmArchive = window.confirm("Are you sure you want to archive this product")
+
+        if(confirmArchive === true) {
+            handleArchive(productID)
+            
             // Update UI by removing the deleted product
             setProducts(products.filter(product => product.product_ID !== productID));
         }
@@ -70,7 +71,7 @@ function AllProducts() {
                         <td>Active</td>
                         <td className="action-links">
                             <a href="#" class="update-link">Update</a>
-                            <a href="#" onClick={() => handleDeleteProduct(product.product_ID)} class="delete-link">Delete</a>
+                            <a href="#" onClick={() => handleArchiveProduct(product.product_ID)} class="delete-link">Archive</a>
                         </td>
                     </tr>
                     ))}         
