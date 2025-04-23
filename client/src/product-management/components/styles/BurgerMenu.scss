@@ -1,9 +1,0 @@
-@import "../../../index.scss";
-
-.burger-menu {
-    cursor: pointer;
-    &:hover {
-        transform: scale(0.95);
-        transition: 1s;
-    }
-}
