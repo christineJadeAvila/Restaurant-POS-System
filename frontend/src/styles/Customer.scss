@@ -1,0 +1,207 @@
+// styles.scss
+
+$primary-color: #001f4d;
+$text-color: #1f1f1f;
+$light-gray: #f5f5f5;
+$border-color: #ccc;
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  background-color: #fff;
+  color: $text-color;
+}
+
+.pos-container {
+  width: 100%;
+  box-sizing: border-box;
+
+  .customer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .customer-info {
+      display: flex;
+      flex-direction: column;
+
+      .customer-name {
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .order-number {
+        font-size: 0.85rem;
+        color: #555;
+        margin-top: 2px;
+      }
+    }
+
+    .edit-icon {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }
+
+  .order-type {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+
+    .btn-outline,
+    .btn-filled {
+      flex: 1;
+      padding: 0.5rem 0;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: 1px solid $primary-color;
+    }
+
+    .btn-outline {
+      background-color: #fff;
+      color: $primary-color;
+    }
+
+    .btn-filled {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  .order-items {
+    background-color: #fafafa;
+    padding: 1rem;
+    border-radius: 8px;
+
+    .order-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+
+      .item-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .item-details {
+        flex-grow: 1;
+
+        .item-name {
+          font-size: 1rem;
+          font-weight: 500;
+          margin: 0 0 4px;
+        }
+
+        .item-price {
+          color: $primary-color;
+          font-size: 0.9rem;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .item-edit {
+        position: absolute;
+        left: 72px;
+        bottom: 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+
+      .item-quantity {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+
+        .qty-btn {
+          background-color: #fff;
+          border: 1px solid $border-color;
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        span {
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    hr {
+      border: none;
+      border-top: 1px dashed $border-color;
+      margin: 1rem 0 0;
+    }
+  }
+
+  .summary {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px dashed $border-color;
+      margin: 1rem 0;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    .btn-outline {
+      flex: 1;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+
+.placeOrder {
+    position: fixed;
+    bottom: 0%;
+    right: 0;
+    background-color: rgb(44, 44, 178);
+    height: 60px;
+    width: 17%;
+    color: white;
+}
+
+.cancelOrder {
+    position: fixed;
+    left: 66%;
+    bottom: 0;
+    background-color: var(--light--buttonColor);
+    height: 60px;
+    width: 17%;
+    color: black;
+}
+

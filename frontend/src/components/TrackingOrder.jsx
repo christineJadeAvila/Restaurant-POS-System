@@ -12,7 +12,7 @@ function TrackOrder() {
             className="track--order"
             onClick={() => setIsOpen(!isOpen)}
         >
-            <p>{isOpen ? "v" : "Track Order"} <img className="track--button" src={trackordericon} alt="" /></p>
+            <p>{isOpen ? "v" : "Track Order ^"} </p>
         </div>
 
         {/* Display Order Panel */}

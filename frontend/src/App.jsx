@@ -6,10 +6,6 @@ import NotFound from "./pages/NotFound"
 import OrderManagementPage from "./pages/OrderManagementPage"
 import Payment from "./pages/PaymentPage"
 import ProtectedRoute from "./components/ProtectedRoutes"
-import AddProduct from "./product-management/pages/AddProduct"
-import UpdateProduct from "./product-management/pages/UpdateProduct"
-import AllProducts from "./product-management/pages/AllProducts"
-import ArchivedProducts from "./product-management/pages/ArchivedProducts"
 
 function Logout() {
   localStorage.clear()
@@ -29,39 +25,12 @@ function App() {
       {/* ORDER MANAGEMENT */}
       <Route path="/" element={
         <ProtectedRoute>
-          <OrderManagementPage/>
+           <OrderManagementPage/>
         </ProtectedRoute>
       }></Route>
-
-      {/* PRODUCT MANAGEMENT */}
-      <Route path="/add-product" element={
-        <ProtectedRoute>
-          <AddProduct/>
-        </ProtectedRoute>
-      }></Route>
-
-      {/* PRODUCT MANAGEMENT */}
-      <Route path="/archived-products" element={
-        <ProtectedRoute>
-          <ArchivedProducts/>
-        </ProtectedRoute>
-      }></Route>
-
-      <Route path="/update-product" element={
-        <ProtectedRoute>
-          <UpdateProduct/>
-        </ProtectedRoute>
-      }></Route>
-
-      <Route path="/all-products" element={
-        <ProtectedRoute>
-          <AllProducts/>
-        </ProtectedRoute>
-      }></Route>
-
 
       {/* PAYMENT */}
-      <Route path="/payment/:orderId" element={
+      <Route path="/payment/:id" element={
         <ProtectedRoute>
           <Payment/>
         </ProtectedRoute>

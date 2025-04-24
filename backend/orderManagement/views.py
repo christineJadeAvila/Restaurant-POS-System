@@ -5,12 +5,6 @@ from .serializers import C_OrderSerializer, UserSerializer, ProductSerializer, P
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import C_Order, Product, Product_Category, Payment, Order_Line
 
-import rembg
-import numpy as np
-from io import BytesIO
-from django.core.files.base import ContentFile
-from PIL import Image
-
 # Create your views here.
 
 # ORDER VIEWS

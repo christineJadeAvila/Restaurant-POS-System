@@ -4,7 +4,6 @@ import Product_Category from "../components/Category"
 import Product from "../components/Product"
 import NavBar from "../components/NavBar"
 import CustomerOrder from "../components/CustomerOrder"
-import TrackOrder from "../components/TrackingOrder"
 import "../styles/OrderMS.css"
 
 function OrderManagementPage() {
@@ -118,11 +117,6 @@ function OrderManagementPage() {
             <section className="customer--order">
                 <CustomerOrder orders={customerOrders} setCustomerOrders={setCustomerOrders} />
             </section>
-
-            <section className="tracker">
-                <TrackOrder />
-            </section>
-            
         </div>
     </>
 }
