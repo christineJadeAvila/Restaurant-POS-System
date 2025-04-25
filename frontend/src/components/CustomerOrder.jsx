@@ -89,7 +89,7 @@ function CustomerOrder({orders, setCustomerOrders}) {
             {orders.length > 0 ? ( <div class="order-items">
                 {orders.map((order, index)=>(
                     <div key={index} class="order-item">
-                        <img src="banana-split.png" alt="Banana Split" class="item-image" />
+                        <img src={order.image} alt="Banana Split" class="item-image" />
                         <div class="item-details">
                             <p class="item-name">{order.product_name}</p>
                             <p class="item-price">₱{order.price}</p>

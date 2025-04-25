@@ -1,48 +1,76 @@
 import { useParams } from "react-router-dom"
-import "../styles/Payment.css"
+import "../styles/Payment.scss"
 import qr from "../assets/OrderMS/QR.svg"
 
 function Payment() {
     const { orderId } = useParams()
 
     return (
-        <div className="payment-div-container">
-            {/* PAYMENT SECTION */}
-            <section className="payment-container">
-                <h1 className="section-title">Payment</h1>
-                <section className="navigation-bar">
-                    <a id="e-payment">E-Payment</a>
-                    <a id="cash">Cash</a>
-                </section>
+        <div class="payment-container">
+            <div class="payment-left">
+            <h1 class="title">Payment</h1>
 
-                <section className="e-payment">
-                    <div className="qr-container">
-                            <img src={qr} alt="" />
-                    </div>
-                    <input type="text" id="reference-number" required/>
-                    <label>Reference Number</label>
-                </section>
-                <button id="proceed-payment">Finish Payment</button>
-            </section>
+            <div class="payment-tabs">
+                <button class="tab active">E-Payment</button>
+                <button class="tab">Cash</button>
+            </div>
 
-            {/* ORDER SUMMARY SECTION */}
-            <section className="order-summary">
-                <div className="payment-total-amount">
-                    <h5 className="total-amount-label">Total Amount</h5>
-                    <h1 className="total-amount">P00.00</h1>
-                    <h5 className="secure-payment-label"><span id="color-green">Secure</span> Payment</h5>
+            <div class="qr-section">
+                <div class="qr-box">
+                <img src={qr} alt="QR Code" class="qr-code" />
                 </div>
+                <p class="scan-instruction">Please Scan QR for Payment</p>
+                <input type="text" />
+                <p class="reference-label">Reference Number</p>
+            </div>
+
+            <button class="finish-btn">Finish Payment</button>
+            </div>
+
+            <div class="payment-summary">
+            <p class="summary-title">Total amount</p>
+            <p class="total-amount">₱00.00</p>
+            <p class="secure-label">Secure <span>Payment</span></p>
+
+            <div class="summary-details">
+                <div class="summary-row header">
+                <span>Order Summary</span>
+                <span>Order ID</span>
+                </div>
+
+                <div class="summary-row item">
+                <span>
+                    Product Name<br />
+                    <small>2x</small>
+                </span>
+                <span>₱00.00</span>
+                </div>
+
                 <hr />
-                <div className="order-summary-title">
-                    <h5 className="order-summary-label">Order Summary</h5>
-                    <h5 className="order-id">#000{orderId}</h5>
+
+                <div class="summary-row">
+                <span>Subtotal</span>
+                <span>₱180.00</span>
                 </div>
-                <div className="order-line-container">
-                    <h5 className="order-item">Banana Split</h5>
-                    <h5 className="orderline-total-amount">P00.00</h5>
+                <div class="summary-row">
+                <span>Tax(5%)</span>
+                <span>₱9.00</span>
                 </div>
-                <p className="quantity">2x</p>
-            </section>
+                <div class="summary-row">
+                <span>Discount</span>
+                <span>₱0.00</span>
+                </div>
+
+                <hr />
+
+                <div class="summary-row total">
+                <span>Total</span>
+                <span>₱300.00</span>
+                </div>
+            </div>
+
+            <p class="print-receipt">Print Receipt</p>
+            </div>
         </div>
     )
 

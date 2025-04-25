@@ -1,0 +1,13 @@
+.time-n-date {
+    margin-right: auto;
+    display: flex;
+    .real-time {
+        width: 110px;
+    }
+    .date-time {
+        margin-left: 1rem;
+    }
+    img {
+        margin: 0 1rem;
+    }
+}
